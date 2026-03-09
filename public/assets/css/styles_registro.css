@@ -1,0 +1,39 @@
+body {
+	background: #f8f9fd;
+}
+
+.container {
+    margin-top: 100px;
+	
+}
+
+.titulologin{
+    font-weight: 200;
+}
+
+#inputNombres,
+#inputUsuario,
+#inputContraseña,
+#inputTelefono {
+    border-color: blue;
+}
+
+.form-select {
+    width: 500px;
+    
+}
+
+.titulo {
+    font-weight: 200;
+    
+}
+
+.link {
+    display: flex;
+    text-decoration: none;
+    color: white;
+
+}
+
+#selecRol{width: 463px;
+    border-radius: 4px;}
