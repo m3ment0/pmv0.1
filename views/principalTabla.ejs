@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Principal</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/css/bootstrap.mi.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+
+  <style>
+    body {
+      color: #566787;
+      background: #f5f5f5;
+      font-family: 'Varela Round', sans-serif;
+      font-size: 13px;
+    }
+
+    .table-responsive {
+      margin: 30px 0;
+    }
+
+    .table-wrapper {
+      min-width: 1000px;
+      background: #fff;
+      padding: 20px 25px;
+      border-radius: 3px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    }
+
+    .table-title {
+      padding-bottom: 15px;
+      background: #299be4;
+      color: #fff;
+      padding: 16px 30px;
+      margin: -20px -25px 10px;
+      border-radius: 3px 3px 0 0;
+    }
+
+    .table-title h2 {
+      margin: 5px 0 0;
+      font-size: 24px;
+    }
+
+    .table-title .btn {
+      color: #566787;
+      float: right;
+      font-size: 13px;
+      background: #fff;
+      border: none;
+      min-width: 50px;
+      border-radius: 2px;
+      border: none;
+      outline: none !important;
+      margin-left: 10px;
+    }
+
+    .table-title .btn:hover,
+    .table-title .btn:focus {
+      color: #566787;
+      background: #f2f2f2;
+    }
+
+    .table-title .btn i {
+      float: left;
+      font-size: 21px;
+      margin-right: 5px;
+    }
+
+    .table-title .btn span {
+      float: left;
+      margin-top: 2px;
+    }
+
+    table.table tr th,
+    table.table tr td {
+      border-color: #e9e9e9;
+      padding: 12px 15px;
+      vertical-align: middle;
+    }
+
+    table.table tr th:first-child {
+      width: 60px;
+    }
+
+    table.table tr th:last-child {
+      width: 100px;
+    }
+
+    table.table-striped tbody tr:nth-of-type(odd) {
+      background-color: #fcfcfc;
+    }
+
+    table.table-striped.table-hover tbody tr:hover {
+      background: #f5f5f5;
+    }
+
+    table.table th i {
+      font-size: 13px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    table.table td:last-child i {
+      opacity: 0.9;
+      font-size: 22px;
+      margin: 0 5px;
+    }
+
+    table.table td a {
+      font-weight: bold;
+      color: #566787;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    table.table td a:hover {
+      color: #2196F3;
+    }
+
+    table.table td a.settings {
+      color: #2196F3;
+    }
+
+    table.table td a.delete {
+      color: #F44336;
+    }
+
+    table.table td i {
+      font-size: 19px;
+    }
+
+    table.table .avatar {
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .status {
+      font-size: 30px;
+      margin: 2px 2px 0 0;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 10px;
+    }
+
+    .text-success {
+      color: #10c469;
+    }
+
+    .text-info {
+      color: #62c9e8;
+    }
+
+    .text-warning {
+      color: #FFC107;
+    }
+
+    .text-danger {
+      color: #ff5b5b;
+    }
+
+    .pagination {
+      float: right;
+      margin: 0 0 5px;
+    }
+
+    .pagination li a {
+      border: none;
+      font-size: 13px;
+      min-width: 30px;
+      min-height: 30px;
+      color: #999;
+      margin: 0 2px;
+      line-height: 30px;
+      border-radius: 2px !important;
+      text-align: center;
+      padding: 0 6px;
+    }
+
+    .pagination li a:hover {
+      color: #666;
+    }
+
+    .pagination li.active a,
+    .pagination li.active a.page-link {
+      background: #03A9F4;
+    }
+
+    .pagination li.active a:hover {
+      background: #0397d6;
+    }
+
+    .pagination li.disabled i {
+      color: #ccc;
+    }
+
+    .pagination li i {
+      font-size: 16px;
+      padding-top: 6px
+    }
+
+    .hint-text {
+      float: left;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+  </style>
+
+
+  <script>
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+  </script>
+
+  <!-- Custom styles for this template -->
+  <link href="assets/css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar navbar-dark sticky-top bg-primary flex-md-nowrap p-0 shadow mb-1">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">OdontoSoft</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">
+                <span data-feather="home"></span>
+                Inicio
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#/mostrar-pacientes">
+                <span data-feather="users"></span>
+                Gestion Pacientes
+              </a>
+
+            </li>
+
+            <li class="nav-item dropdown">
+
+              <a class="nav-link" href="#">
+                <span data-feather="file"></span>
+                Reportes
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+
+        </div>
+      </nav>
+      <!-- <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">-->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-2">
+        <!--<div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        </div>-->
+        <!--Tabla-->
+
+        <div class="row">
+
+          <!--<div class="col-md-12">-->
+
+          <div class="card">
+            <div class="table-wrapper">
+              <div class="table-title">
+                <div class="row">
+
+                  <div class="col-md-6">
+                    <h2>Gestion <b>Pacientes</b></h2>
+                  </div>
+
+                  <div class="col-md-6">
+
+                    <a href="/registro-paciente" class="btn btn-primary"><i class="material-icons">&#xE147;</i>
+                      <span>Crear Paciente</span></a>
+
+                    <a href="/reporte-paciente" class="btn btn-primary"><i class="material-icons">&#xE24D;</i>
+                      <span>Crear
+                        Pdf</span></a>
+                    <a href="/principal" class="btn btn-primary"><i class="material-icons">&#xE860;</i>
+                      <span>Principal</span></a>
+
+                  </div>
+                </div>
+              </div>
+              <!--Busqueda-->
+              <div class="row">
+                <nav class=" navbar- bg-light">
+                  <form action="/buscar-paciente" method="post" class="form-inline">
+
+                    <input class="form-control mr-sm-2 mb-2" name="entradaid" type="number" placeholder="Id" aria-label="Id">
+                    <input class="form-control mr-sm-2" name="entrada" type="search" placeholder="Nombres"
+                      aria-label="Search">
+                    <div class="row-md-12 mt-2">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+
+                    </div>
+
+                  </form>
+                </nav>
+              </div>
+
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nombres</th>
+                    <th>Num Documento</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!---->
+                  <% registro.forEach((user)=>{ %>
+                    <tr>
+                      <td>
+                        <%= user.id_paciente %>
+                      </td>
+                      <td>
+                        <%= user.nombres %>
+                      </td>
+                      <td>
+                        <%= user.num_documento %>
+                      </td>
+                      <td>
+                        <%= user.telefono %>
+                      </td>
+                      <td>
+                        <%= user.correo %>
+                      </td>
+                      <td>
+
+
+                        <a href="/cargar-paciente/<%= user.id_paciente %>" class="edit" data-toggle="modal"><i
+                            class="material-icons" data-toggle="tooltip" title="" data-original-title="Editar"></i></a>
+                        <a href="/eliminar-paciente/<%= user.id_paciente %>" class="delete" title="Eliminar"
+                          data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+
+
+                      </td>
+
+                    </tr>
+
+                    <% }) %>
+
+
+                </tbody>
+
+              </table>
+
+
+
+            </div>
+          </div>
+          <!--</div>Columna-->
+        </div>
+      </main>
+
+      <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+        crossorigin="anonymous"></script>
+      <script src="assets/js/dashboard.js"></script>
+
+    </div>
+  </div>
+
+
+
+
+
+</body>
+
+</html>

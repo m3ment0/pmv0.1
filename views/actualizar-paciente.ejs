@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>actualizarPaciente</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/stylesRegistro.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid p-4 text-center">
+    <h1 class="titulo">A C T U A L I Z A R &nbsp P A C I E N T E</h1>
+  </div>
+  <div class="row">
+
+  </div>
+  <!-- Formulario -->
+  <% if(datos) { %>
+
+    <div class="container fw-bold mt-5">
+      <form action="/editar-paciente" method="POST" class="formulario">
+        <!--
+        <input type="text" class="form-control w-50 mb-3" id="idpaciente" name="idpaciente"
+          value="<%= datos.id_paciente %>" hidden>
+        -->
+
+
+        <input id="nombre" name="id" value="<%= datos.id_paciente %>" hidden>
+
+
+
+        <div class="row ">
+          <label class="col-2 col-form-label" id="">Nombres</label>
+          <div class="col-10 ">
+            <input type="text" class="form-control w-50 mb-3" id="inputNombres" name="nombres"
+              value="<%= datos.nombres %>">
+          </div>
+        </div>
+        <div class="row">
+          <label class="col-2 col-form-label" id="labelRol">Num Documento</label>
+          <div class="col-10 ">
+            <input type="text" class="form-control w-50 mb-3" id="inputUsuario" name="documento"
+              value="<%= datos.num_documento %>">
+          </div>
+        </div>
+        <div class="row">
+          <label class="col-2 col-form-label" id="labelRol">Telefono</label>
+          <div class="col-10 ">
+            <input type="text" class="form-control w-50 mb-3" id="inputContraseña" name="telefono"
+              value="<%= datos.telefono %>">
+          </div>
+        </div>
+        <div class="row">
+          <label class="col-2 col-form-label" id="labelTelefono">Correo</label>
+          <div class="col-10">
+            <input type="email" class="form-control w-50 mb-3" id="inputTelefono" name="correo"
+              value="<%= datos.correo %>">
+          </div>
+        </div>
+
+        <div class="row">
+          <label class="col-2 col-form-label" id="labelContraseña">Contraseña</label>
+          <div class="col-10">
+            <input type="password" class="form-control w-50 mb-3" id="inputContraseña" name="contraseña"
+              value="<%= datos.contraseña %>">
+          </div>
+        </div>
+        <% } %>
+          <div class="row ">
+
+
+          </div>
+    </div>
+
+
+    <div class="row mt-5 justify-content-center g-0">
+
+      <div class="col-6 me-5 ">
+        <div class="">
+
+
+          <td>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="/mostrar-pacientes" class="btn  btn-danger">Cancelar</a>
+
+          </td>
+        </div>
+
+      </div>
+
+    </div>
+    </form>
+
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <!-- Footer -->
+      <footer class="footer bg-white text-center text-lg-start mt-5">
+        <!-- Copyright Footer -->
+        <div class="text-center p-3">
+          &copy; 2025 OdontoSoft
+          <a class="text-dark" href="/">OdontoSoft</a>
+        </div>
+        <!-- Copyright Footer-->
+      </footer>
+      <!-- Footer -->
+    </div>
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+<% if (typeof alert !="undefined" ) { %>
+  <script>
+    Swal.fire({
+      title: '<%= alertTitle %>',
+      text: '<%= alertMessage %>',
+      icon: '<%= alertIcon %>',
+      showConfirmButton: '<%= showConfirmButton %>',
+      timer: '<%= timer %>'
+    }).then(() => {
+      window.location.href = '/mostrar-pacientes'
+    })
+  </script>
+  <% } %>
+
+</html>
